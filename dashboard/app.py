@@ -6,6 +6,7 @@ from src.charts import (
     plot_bookings_by_quarter,
     plot_service_type,
     plot_virtual_vs_inperson,
+    plot_bioethics_topics,
     plot_satisfaction_means,
     plot_satisfaction_comparison,
     plot_circulation,
@@ -102,6 +103,7 @@ if page == "Home":
                 plot_virtual_vs_inperson(filtered_df)
             plot_bookings_by_quarter(filtered_df)
             st.info("Strategic plan target: 5% annual growth in student appointments.")
+            plot_bioethics_topics(filtered_df)
 
     with t2:
         st.subheader("Collection Value")
