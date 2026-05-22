@@ -136,6 +136,26 @@ def plot_virtual_vs_inperson(df: pd.DataFrame) -> None:
     fig.update_layout(title="Appointment Delivery Method")
     st.plotly_chart(fig, use_container_width=True)
 
+def plot_bioethics_topics(df: pd.DataFrame) -> None:
+    """Plots bioethics topics discussed in Book A Librarian appointments.
+    """
+    if df.empty:
+        st.info("No data available.")
+        return
+
+    # create bioethics only dataframe
+    df_bioethics = df[df['Service'] == 'ELEC 704 Bioethics Consultation']
+
+    # create groupby object
+    agg = (df_bioethics.groupby("Topic", as_index=False).size())
+
+    # PLOTLY BARPLOT VERSION
+    labels = {'Topic':'Bioethics Topic', 'size':'Number of Bookings'}
+    fig = px.bar(agg, x=agg['Topic'], y=agg['size'], labels=labels, title='Number of Bookings by Bioethics Topic',
+                 color_discrete_sequence="FOREST_GREEN")
+    fig.update_xaxes(tickangle=45)
+
+    st.plotly_chart(fig, use_container_width=True)
 
 def plot_satisfaction_means(df: pd.DataFrame, year: int) -> None:
     """
