@@ -68,14 +68,30 @@ def load_bookings() -> pd.DataFrame:
             return f"AY{str(date.year-1)[2:]}-{str(date.year)[2:]}"
 
     combined["AcademicYear"] = combined["Date"].apply(get_academic_year)
-# Some files had extra spaces or diff caps
-# or making dupes, this  should clean it up
+    # Some files had extra spaces or diff caps
+    # or making dupes, this  should clean it up
     combined["Service"] = combined["Service"].str.strip()
     combined["Location"] = combined["Location"].str.strip()
+    combined["Topic"] = combined["Topic"].str.strip()
+    combined["PNWU Status"] = combined["PNWU Status"].str.strip()
+    combined["PNWU Academic Affiliation"] = combined["PNWU Academic Affiliation"].str.strip()
+
+    # for bioethics topics - consolidate multiple-category topics for better visualization
+    combined['Topic'] = combined['Topic'].replace(
+        'Physician Aid-in-Dying AND Do Not Resuscitate Orders AND End-of-Life Issues AND Parental Decision Making',
+        'Physician Aid in Dying')
+    combined['Topic'] = combined['Topic'].replace(
+        'End-of-Life Issues AND (Treatment Refusal OR Cross-Cultural Issues and Diverse Beliefs)', 'End-of-Life Issues')
+    combined['Topic'] = combined['Topic'].replace('End-of-Life Issues OR Termination of Life-Sustaining Treatment',
+                                                  'End-of-Life Issues')
+    combined['Topic'] = combined['Topic'].replace('Public Health Ethics AND Mistakes', 'Public Health Ethics')
+
+    # drop unnecessary columns
+    combined = combined.drop(['Status', 'Program/Dept', 'Booking Id', 'Tracking Data', ' PNWU Status'], axis=1)
 
     return combined
 
-# Seperate years if diff questions 
+# Separate years if diff questions
 
 QUESTION_LABELS_2023 = {
     "Question 45": "Professionalism of Staff",
