@@ -179,6 +179,7 @@ if page == "Home":
 
     with t5:
         st.subheader("Qualitative Impact")
+        st.write("In Q1 of 2026, E.R.A.I. Informatics and the PNWU Library team partnered to conduct mixed (qualitative and quantitative) impact surveys to gain a better understanding of how effectively PNWU Library meets the needs of its students, faculty & staff, and administration. The visualizations and quotes below represent quantitative analysis and qualitative feedback from those surveys. These findings illustrate what PNWU Library is currently doing well, and where the library can improve to better serve its primary stakeholders.")
         st.caption("What students actually said about the library.")
         st.markdown("#### What is Working")
         col1, col2 = st.columns(2)
