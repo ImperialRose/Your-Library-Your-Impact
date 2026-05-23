@@ -217,3 +217,23 @@ def load_circulation() -> pd.DataFrame:
     df["Month"] = pd.to_datetime(df["Month"], format="%Y-%m")
     df = df.sort_values("Month")
     return df
+
+## FUTURE ADDITIONS - Student Learning Outcomes
+# Use the dummy code below as a jumping-off point to write functions for loading & cleaning student learning outcomes data.
+# Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.
+
+    # def load_learning_outcomes() -> pd.DataFrame:
+    # '''Loads and cleans Student Learning Outcomes dataset(s).
+    # '''
+
+    ## LOAD DATA
+    # fname = ("[PLACEHOLDER - Insert file name or file name pattern]")
+    # fpath = DATA_DIR / fname
+    # if not fpath.exists():
+        # return pd.DataFrame()
+    # df_learning_outcomes = pd.read_csv(fpath) --> adjust this from csv depending on file source type
+
+    ## CLEAN DATA
+    # Add any data cleaning steps required to prepare the Learning Outcomes data here
+
+    # return df

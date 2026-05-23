@@ -55,3 +55,16 @@ def render_satisfaction_filters(df: pd.DataFrame, key_prefix: str = "") -> pd.Da
         key=f"{key_prefix}_programs"
     )
     return df[df["LevelName"].isin(selected)]
+
+## FUTURE ADDITIONS - Student Learning Outcomes
+# Edit & uncomment the code block below when you are ready to add Student Learning Outcomes data to the dashboard.
+# def render_learning_outcomes_filters(df: pd.DataFrame) -> pd.DataFrame:
+    # """
+    # Filter for student learning outcome data.
+    # """
+
+    # PLACEHOLDER - Add code to sort dataframe as needed
+
+    # PLACEHOLDER - Add code to filter dataframe as needed
+
+    # return PLACEHOLDER - filtered dataframe

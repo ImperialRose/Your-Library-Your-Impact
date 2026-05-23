@@ -10,8 +10,14 @@ from src.charts import (
     plot_satisfaction_means,
     plot_satisfaction_comparison,
     plot_circulation,
-    plot_circulation_by_year,
+    plot_circulation_by_year
 )
+
+## FUTURE ADDITIONS - Student Learning Outcomes
+# When you are ready to add Student Learning Outcomes data to the dashboard, uncomment the lines below:
+# from src.data import load_learning_outcomes
+# from src.charts import plot_student_learning_outcomes
+# from src.filters import render_learning_outcomes_filters
 
 st.set_page_config(
     page_title="Your Library, Your Impact",

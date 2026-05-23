@@ -347,3 +347,16 @@ def plot_circulation_by_year(df: pd.DataFrame, metric: str) -> None:
     )
     st.plotly_chart(fig, use_container_width=True)
 
+## FUTURE ADDITIONS - Student Learning Outcomes
+
+# Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.
+# Use the dummy code below as a jumping-off point to write visualization plotting functions for Student Learning Outcomes data.
+
+# def plot_student_learning_outcomes(df: pd.DataFrame) -> None:
+    # if df.empty:
+        # st.info("No circulation data available.")
+        # return
+
+    # [INSERT VISUALIZATION PLOT CODE HERE]
+
+    # st.plotly_chart(fig, use_container_width=True)
