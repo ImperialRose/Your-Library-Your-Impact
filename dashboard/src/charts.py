@@ -151,8 +151,8 @@ def plot_bioethics_topics(df: pd.DataFrame) -> None:
 
     # PLOTLY BARPLOT VERSION
     labels = {'Topic':'Bioethics Topic', 'size':'Number of Bookings'}
-    fig = px.bar(agg, x=agg['Topic'], y=agg['size'], labels=labels, title='Number of Bookings by Bioethics Topic',
-                 color_discrete_sequence="FOREST_GREEN")
+    fig = px.bar(agg, x='Topic', y='size', labels=labels, title='Number of Bookings by Bioethics Topic',
+                 color_discrete_sequence=[FOREST_GREEN])
     fig.update_xaxes(tickangle=45)
 
     st.plotly_chart(fig, use_container_width=True)
