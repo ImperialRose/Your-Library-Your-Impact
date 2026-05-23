@@ -77,6 +77,7 @@ def load_bookings() -> pd.DataFrame:
     combined["PNWU Academic Affiliation"] = combined["PNWU Academic Affiliation"].str.strip()
 
     # for bioethics topics - consolidate multiple-category topics for better visualization
+    combined['Service'] = combined['Service'].replace('ELEC 704 Bioethics Consultation','ELEC 704 Bioethics')
     combined['Topic'] = combined['Topic'].replace(
         'Physician Aid-in-Dying AND Do Not Resuscitate Orders AND End-of-Life Issues AND Parental Decision Making',
         'Physician Aid in Dying')
