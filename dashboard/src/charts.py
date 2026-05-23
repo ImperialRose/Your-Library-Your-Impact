@@ -144,14 +144,14 @@ def plot_bioethics_topics(df: pd.DataFrame) -> None:
         return
 
     # create bioethics only dataframe
-    df_bioethics = df[df['Service'] == 'ELEC 704 Bioethics Consultation']
+    df_bioethics = df[df['Service'] == 'ELEC 704 Bioethics']
 
     # create groupby object
     agg = (df_bioethics.groupby("Topic", as_index=False).size())
 
     # PLOTLY BARPLOT VERSION
     labels = {'Topic':'Bioethics Topic', 'size':'Number of Bookings'}
-    fig = px.bar(agg, x='Topic', y='size', labels=labels, title='Number of Bookings by Bioethics Topic',
+    fig = px.bar(agg, x="Topic", y="size", labels=labels, title='Number of Bookings by Bioethics Topic',
                  color_discrete_sequence=[FOREST_GREEN])
     fig.update_xaxes(tickangle=45)
 
