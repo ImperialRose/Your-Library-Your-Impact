@@ -118,6 +118,7 @@ def plot_virtual_vs_inperson(df: pd.DataFrame) -> None:
     # Renamed for clarity
     location_map = {
         "Virtual": "Virtual",
+        "Library": "In-Person",
         "PNWU Library or Virtual": "In-Person",
     }
     df = df.copy()
