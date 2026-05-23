@@ -1,0 +1,12 @@
+response_id,recorded_date,survey_month,duration_minutes,progress_pct,data_support_effectiveness_num,dashboard_use_nps_score,dashboard_use_nps_group,dashboard_use_nps_group_calc
+R_7NB8iQGMqpurpEl,2026-02-20 16:22:33,2026-02,0.1,100,,,,
+R_2CVYEiXuSLK5ukN,2026-02-21 18:51:39,2026-02,1.3,100,,5.0,1.0,Detractor
+R_2SuGE4XCiznIu2E,2026-02-26 11:11:46,2026-02,3.8,100,,,,
+R_3GDhA9IlNZ6S9kd,2026-02-26 15:07:31,2026-02,120.0,100,,,,
+R_1IWXwAYrqdyfCLg,2026-02-27 14:34:31,2026-02,0.1,100,,,,
+R_7OMeQdljrxdRfRT,2026-02-27 15:32:40,2026-02,1.8,100,,,,
+R_22mNPR1kkhssF69,2026-02-28 19:21:12,2026-02,72.3,100,,,,
+R_22AdjyFrQIsnyMs,2026-03-01 20:15:58,2026-03,17.5,100,,10.0,3.0,Promoter
+R_1kSUbuAohDJ1LHf,2026-03-03 13:26:29,2026-03,7.6,100,,6.0,1.0,Detractor
+R_3Gd0CVhnhPT4Qnp,2026-03-06 17:42:56,2026-03,3.8,100,,4.0,1.0,Detractor
+R_2zO6jSbNXDjZntx,2026-03-09 09:08:39,2026-03,1.3,100,,0.0,1.0,Detractor

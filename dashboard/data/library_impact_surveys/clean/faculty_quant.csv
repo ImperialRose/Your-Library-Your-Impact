@@ -1,0 +1,12 @@
+response_id,recorded_date,survey_month,duration_minutes,progress_pct,collection_support_rating_num,course_materials_satisfaction_num,book_librarian_likelihood_num,research_materials_satisfaction_num,library_partner_nps_score,library_partner_nps_group,library_partner_nps_group_calc,degree_program,status_or_role
+R_5lGkqSzjL3CkH9c,2026-02-20 15:17:52,2026-02,0.1,100,,,,,,,,,
+R_5G9UYPMekeOE28r,2026-02-20 15:31:45,2026-02,0.1,100,,,,,,,,,
+R_5ew54xzON4DfJLQ,2026-02-20 15:34:05,2026-02,0.6,100,,,,,10.0,3.0,Promoter,1.0,4.0
+R_7phTOharDJGIM3A,2026-02-21 18:45:49,2026-02,6.7,100,,,,,5.0,1.0,Detractor,,
+R_3D7jElyEi0f50hH,2026-02-26 11:15:34,2026-02,2.0,100,,,,,,,,,
+R_6LU4Iu4T8Rq6bEV,2026-02-26 12:52:38,2026-02,25.0,100,,,,,,,,,
+R_5RggZEy7HtEWukM,2026-02-28 17:59:49,2026-02,74.6,100,,,,,5.0,1.0,Detractor,,
+R_69oeSM7dkgy6b9v,2026-03-01 09:10:52,2026-03,6.2,100,,,,,6.0,1.0,Detractor,4.0,1.0
+R_637Qbsb0u5g17xV,2026-03-01 22:05:46,2026-03,4.1,100,,,,,10.0,3.0,Promoter,1.0,1.0
+R_7Igb9R23L5Ie9Ct,2026-03-03 09:58:47,2026-03,4.5,100,,,,,6.0,1.0,Detractor,2.0,1.0
+R_52ScowzZCJnGDvO,2026-03-06 17:57:36,2026-03,98.3,100,,,,,6.0,1.0,Detractor,4.0,1.0

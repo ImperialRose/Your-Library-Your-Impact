@@ -1,0 +1,16 @@
+response_id,recorded_date,survey_month,duration_minutes,progress_pct,health_info_confidence_num,course_materials_satisfaction_num,library_nps_score,library_nps_group,library_nps_group_calc,degree_program
+R_2Bs8DO1qWsQr8XE,2026-02-20 10:32:20,2026-02,1.2,100,,,10.0,3.0,Promoter,
+R_2fwDNWPIGlKfGJI,2026-02-20 10:36:14,2026-02,0.0,100,,,,,,
+R_uwenAe3JCMbC4Jr,2026-02-20 10:37:13,2026-02,0.9,100,,,10.0,3.0,Promoter,
+R_Z3G1z9llQ1N27kZ,2026-02-20 15:23:37,2026-02,0.3,100,,,,,,
+R_302HS4wW0igckhj,2026-02-21 18:27:54,2026-02,5.4,100,,,5.0,1.0,Detractor,
+R_3iniMJjbOE5Ho6d,2026-02-26 11:13:22,2026-02,1.4,100,,,,,,
+R_3sjBpPlOEN84TQB,2026-02-26 12:19:37,2026-02,12.2,100,,,,,,
+R_3fqvlSZsEIH4oOr,2026-02-27 12:22:56,2026-02,3.1,100,,,,,,
+R_u3MjnTmwARihde1,2026-02-27 13:17:15,2026-02,0.1,100,,,,,,
+R_yW6d2AV8ZKtsEz7,2026-02-27 15:32:25,2026-02,0.9,100,,,,,,
+R_1IFA5mQVS6EomTT,2026-02-28 16:18:01,2026-02,47.2,100,,,5.0,1.0,Detractor,
+R_2aVLP1p5pfI30xb,2026-03-03 12:36:18,2026-03,4.0,100,,,8.0,2.0,Passive,1.0
+R_1mr8OsMAqHw8sKy,2026-03-10 16:04:59,2026-03,6.1,100,,,8.0,2.0,Passive,1.0
+R_2V2vDcajF6D41Sd,2026-03-11 19:39:54,2026-03,2.1,100,,,9.0,3.0,Promoter,1.0
+R_31Qt9H1kfy67uA1,2026-03-12 01:20:02,2026-03,3.6,100,,,10.0,3.0,Promoter,2.0
