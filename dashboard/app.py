@@ -82,6 +82,7 @@ if page == "Home":
 
     st.markdown("---")
 
+    # Creating tabs; note - see commented code below for when you want to add more tabs
     t1, t2, t3, t4, t5 = st.tabs([
         "Holistic Student Engagement",
         "Collection Value",
@@ -89,6 +90,17 @@ if page == "Home":
         "General Student Satisfaction",
         "Qualitative Impact"
     ])
+
+    ## FUTURE ADDITION
+    # When ready to add Student Learning Outcomes data, delete the section above and uncomment this section.
+    # t1, t2, t3, t4, t5, t6 = st.tabs([
+        # "Holistic Student Engagement",
+        # "Collection Value",
+        # "Institutional Cost Avoidance",
+        # "General Student Satisfaction",
+        # "Student Learning Outcomes",
+        # "Qualitative Impact"
+    # ])
 
     with t1:
         st.subheader("Holistic Student Engagement")
@@ -177,7 +189,17 @@ if page == "Home":
             st.info("2023 and 2025 used different question sets so overlap is limited.")
             plot_satisfaction_comparison(sat_both_df)
 
-    with t5:
+    # FUTURE ADDITION - STUDENT LEARNING OUTCOMES
+    # When ready to add Student Learning Outcomes data, change "with t5" (currently "Qualitative Impact") to be "with t6".
+    # Then uncomment the code block below
+
+    # with t5:
+        # st.subheader("Student Learning Outcomes")
+        # st.write("PLACEHOLDER: Replace this string with any context you wish to include at the top of this tab.")
+        # st.caption("PLACEHOLDER: Replace this string with any caption(s) for your visualizations.")
+        # st.write("PLACEHOLDER: Add the function calls to render filters for and plot your visualizations.")
+
+    with t5: # note - when ready to add Student Learning Outcomes tab, change this to "with t6"
         st.subheader("Qualitative Impact")
         st.write("In Q1 of 2026, E.R.A.I. Informatics and the PNWU Library team partnered to conduct mixed (qualitative and quantitative) impact surveys to gain a better understanding of how effectively PNWU Library meets the needs of its students, faculty & staff, and administration. The visualizations and quotes below represent quantitative analysis and qualitative feedback from those surveys. These findings illustrate what PNWU Library is currently doing well, and where the library can improve to better serve its primary stakeholders.")
         st.caption("What students actually said about the library.")
