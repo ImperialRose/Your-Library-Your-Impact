@@ -347,6 +347,25 @@ def plot_circulation_by_year(df: pd.DataFrame, metric: str) -> None:
     )
     st.plotly_chart(fig, use_container_width=True)
 
+def plot_avg_NPS(df: pd.DataFrame) -> None:
+    """
+    Bar chart plotting the average Net Promoter Score for each of the three Impact Survey respondent groups (Students, Faculty, and Admin).
+    """
+    if df.empty:
+        st.info("No appointment data available.")
+        return
+
+    labels = {'group':'Respondent Group','scores':'NPS Score (0-10)'}
+    fig = px.bar(df, x='group', y='scores', labels=labels, title='Average NPS Score by Respondent Group', color = 'group', color_discrete_map={
+    'Students':FOREST_GREEN,
+    'Faculty':VINEYARD_GREEN,
+    'Admin':PACIFIC_BLUE
+    }, text_auto=True)
+    fig.add_hline(y=7, line_dash='dash', annotation_text="Passive threshold (7) ",
+              annotation_position="top right")
+
+    st.plotly_chart(fig, use_container_width=True)
+
 ## FUTURE ADDITIONS - Student Learning Outcomes
 
 # Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.

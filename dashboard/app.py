@@ -1,5 +1,5 @@
 import streamlit as st
-from src.data import load_bookings, load_satisfaction, load_satisfaction_both, load_circulation
+from src.data import load_bookings, load_satisfaction, load_satisfaction_both, load_circulation, load_admin_quant_data, load_faculty_quant_data, load_student_quant_data, get_NPS_scores
 from src.filters import render_booking_filters, render_satisfaction_filters
 from src.charts import (
     plot_bookings_by_year,
@@ -10,7 +10,8 @@ from src.charts import (
     plot_satisfaction_means,
     plot_satisfaction_comparison,
     plot_circulation,
-    plot_circulation_by_year
+    plot_circulation_by_year,
+    plot_avg_NPS
 )
 
 ## FUTURE ADDITIONS - Student Learning Outcomes
@@ -60,6 +61,10 @@ sat23_df = load_satisfaction(2023)
 sat25_df = load_satisfaction(2025)
 sat_both_df = load_satisfaction_both()
 circ_df = load_circulation()
+admin_quant_df = load_admin_quant_data()
+faculty_quant_df = load_faculty_quant_data()
+student_quant_df = load_student_quant_data()
+NPS_scores_df = get_NPS_scores(admin_quant_df, faculty_quant_df, student_quant_df)
 
 if page == "Home":
     import base64
@@ -208,6 +213,11 @@ if page == "Home":
     with t5: # note - when ready to add Student Learning Outcomes tab, change this to "with t6"
         st.subheader("Qualitative Impact")
         st.write("In Q1 of 2026, E.R.A.I. Informatics and the PNWU Library team partnered to conduct mixed (qualitative and quantitative) impact surveys to gain a better understanding of how effectively PNWU Library meets the needs of its students, faculty & staff, and administration. The visualizations and quotes below represent quantitative analysis and qualitative feedback from those surveys. These findings illustrate what PNWU Library is currently doing well, and where the library can improve to better serve its primary stakeholders.")
+        if NPS_scores_df.empty:
+            st.warning("NPS score data not found.")
+        else:
+            plot_avg_NPS(NPS_scores_df)
+            st.caption("Students, i.e. the most frequent users of the library, gave the highest NPS score. Faculty rated the library just below the passive threshold (NPS 7): they know the library is there but do not see it as a true partner in their own teaching & research. Administrators, i.e. those setting budgets, allocating resources, and driving institutional decisions, gave the lowest score.")
         st.caption("What students actually said about the library.")
         st.markdown("#### What is Working")
         col1, col2 = st.columns(2)

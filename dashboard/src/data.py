@@ -218,6 +218,30 @@ def load_circulation() -> pd.DataFrame:
     df = df.sort_values("Month")
     return df
 
+@st.cache_data(show_spinner=False)
+def load_admin_quant_data() -> pd.DataFrame:
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/admin_quant.csv')
+    return df
+
+@st.cache_data(show_spinner=False)
+def load_faculty_quant_data() -> pd.DataFrame:
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/faculty_quant.csv')
+    return df
+
+@st.cache_data(show_spinner=False)
+def load_student_quant_data() -> pd.DataFrame:
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/student_quant.csv')
+    return df
+
+@st.cache_data(show_spinner=False)
+def get_NPS_scores(df_quant_admin, df_quant_faculty, df_quant_student) -> pd.DataFrame:
+    avg_NPS_admin = round(df_quant_admin['dashboard_use_nps_score'].mean(), 2)
+    avg_NPS_faculty = round(df_quant_faculty['library_partner_nps_score'].mean(), 2)
+    avg_NPS_student = round(df_quant_student['library_nps_score'].mean(), 2)
+    NPS_scores = {'group':['Students','Faculty','Admin'], 'scores':[avg_NPS_student,avg_NPS_faculty,avg_NPS_admin]}
+    df = pd.DataFrame.from_dict(NPS_scores)
+    return df
+
 ## FUTURE ADDITIONS - Student Learning Outcomes
 # Use the dummy code below as a jumping-off point to write functions for loading & cleaning student learning outcomes data.
 # Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.
