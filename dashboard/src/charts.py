@@ -356,7 +356,7 @@ def plot_avg_NPS(df: pd.DataFrame) -> None:
         return
 
     labels = {'group':'Respondent Group','scores':'NPS Score (0-10)'}
-    fig = px.bar(df, x='group', y='scores', labels=labels, title='Average NPS Score by Respondent Group', color = 'group', color_discrete_map={
+    fig = px.bar(df, x='group', y='scores', labels=labels, color = 'group', color_discrete_map={
     'Students':FOREST_GREEN,
     'Faculty':VINEYARD_GREEN,
     'Admin':PACIFIC_BLUE

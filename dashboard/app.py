@@ -213,13 +213,15 @@ if page == "Home":
     with t5: # note - when ready to add Student Learning Outcomes tab, change this to "with t6"
         st.subheader("Qualitative Impact")
         st.write("In Q1 of 2026, E.R.A.I. Informatics and the PNWU Library team partnered to conduct mixed (qualitative and quantitative) impact surveys to gain a better understanding of how effectively PNWU Library meets the needs of its students, faculty & staff, and administration. The visualizations and quotes below represent quantitative analysis and qualitative feedback from those surveys. These findings illustrate what PNWU Library is currently doing well, and where the library can improve to better serve its primary stakeholders.")
+        st.markdown("#### Average NPS Score by Respondent Group")
         if NPS_scores_df.empty:
             st.warning("NPS score data not found.")
         else:
             plot_avg_NPS(NPS_scores_df)
             st.caption("Students, i.e. the most frequent users of the library, gave the highest NPS score. Faculty rated the library just below the passive threshold (NPS 7): they know the library is there but do not see it as a true partner in their own teaching & research. Administrators, i.e. those setting budgets, allocating resources, and driving institutional decisions, gave the lowest score.")
-        st.caption("What students actually said about the library.")
-        st.markdown("#### What is Working")
+        st.markdown("#### Qualitative Feedback")
+        st.caption("What respondents said about the library")
+        st.markdown("##### What is Working")
         col1, col2 = st.columns(2)
         with col1:
             st.success('"The library staff have been incredible in providing support and guidance for independent research projects."')
@@ -229,7 +231,7 @@ if page == "Home":
             st.success('"Amazing, effective, and responsive staff, from the leadership on down."')
             st.success('"The quickest I ever received an ILL was two hours after request. They deserve a raise!!!!!"')
             st.success('"I access information through the library databases every day during rotations."')
-        st.markdown("#### What Needs Attention")
+        st.markdown("##### What Needs Attention")
         col1, col2 = st.columns(2)
         with col1:
             st.error('"I did not even know we had a library."')
