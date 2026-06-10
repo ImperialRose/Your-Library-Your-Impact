@@ -1,5 +1,13 @@
 import streamlit as st
-from src.data import load_bookings, load_satisfaction, load_satisfaction_both, load_circulation, load_admin_quant_data, load_faculty_quant_data, load_student_quant_data, get_NPS_scores
+from src.data import (load_bookings,
+                      load_satisfaction,
+                      load_satisfaction_both,
+                      load_circulation,
+                      load_admin_quant_data,
+                      load_faculty_quant_data,
+                      load_student_quant_data,
+                      get_NPS_scores,
+                      get_impact_satisfaction_ratings)
 from src.filters import render_booking_filters, render_satisfaction_filters
 from src.charts import (
     plot_bookings_by_year,
@@ -11,7 +19,8 @@ from src.charts import (
     plot_satisfaction_comparison,
     plot_circulation,
     plot_circulation_by_year,
-    plot_avg_NPS
+    plot_avg_NPS,
+    plot_impact_satisfaction_ratings
 )
 
 ## FUTURE ADDITIONS - Student Learning Outcomes
@@ -61,10 +70,11 @@ sat23_df = load_satisfaction(2023)
 sat25_df = load_satisfaction(2025)
 sat_both_df = load_satisfaction_both()
 circ_df = load_circulation()
-admin_quant_df = load_admin_quant_data()
-faculty_quant_df = load_faculty_quant_data()
-student_quant_df = load_student_quant_data()
-NPS_scores_df = get_NPS_scores(admin_quant_df, faculty_quant_df, student_quant_df)
+admin_df = load_admin_quant_data()
+faculty_df = load_faculty_quant_data()
+student_df = load_student_quant_data()
+NPS_scores_df = get_NPS_scores(admin_df, faculty_df, student_df)
+satisfaction_ratings_df = get_impact_satisfaction_ratings(admin_df, faculty_df, student_df)
 
 if page == "Home":
     import base64
@@ -217,8 +227,13 @@ if page == "Home":
         if NPS_scores_df.empty:
             st.warning("NPS score data not found.")
         else:
-            plot_avg_NPS(NPS_scores_df)
             st.caption("Students, i.e. the most frequent users of the library, gave the highest NPS score. Faculty rated the library just below the passive threshold (NPS 7): they know the library is there but do not see it as a true partner in their own teaching & research. Administrators, i.e. those setting budgets, allocating resources, and driving institutional decisions, gave the lowest score.")
+            plot_avg_NPS(NPS_scores_df)
+        st.markdown("#### Satisfaction Ratings Across All Groups")
+        if satisfaction_ratings_df.empty:
+            st.warning("Impact survey satisfaction ratings data not found.")
+        else:
+            plot_impact_satisfaction_ratings(satisfaction_ratings_df)
         st.markdown("#### Qualitative Feedback")
         st.caption("What respondents said about the library")
         st.markdown("##### What is Working")

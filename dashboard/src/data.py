@@ -220,27 +220,38 @@ def load_circulation() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def load_admin_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/admin_quant.csv')
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/admin_clean_full.csv')
     return df
 
 @st.cache_data(show_spinner=False)
 def load_faculty_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/faculty_quant.csv')
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/faculty_clean_full.csv')
     return df
 
 @st.cache_data(show_spinner=False)
 def load_student_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/student_quant.csv')
+    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/student_clean_full.csv')
     return df
 
 @st.cache_data(show_spinner=False)
-def get_NPS_scores(df_quant_admin, df_quant_faculty, df_quant_student) -> pd.DataFrame:
-    avg_NPS_admin = round(df_quant_admin['dashboard_use_nps_score'].mean(), 2)
-    avg_NPS_faculty = round(df_quant_faculty['library_partner_nps_score'].mean(), 2)
-    avg_NPS_student = round(df_quant_student['library_nps_score'].mean(), 2)
+def get_NPS_scores(df_admin, df_faculty, df_student) -> pd.DataFrame:
+    avg_NPS_admin = round(df_admin['dashboard_use_nps_score'].mean(), 2)
+    avg_NPS_faculty = round(df_faculty['library_partner_nps_score'].mean(), 2)
+    avg_NPS_student = round(df_student['library_nps_score'].mean(), 2)
     NPS_scores = {'group':['Students','Faculty','Admin'], 'scores':[avg_NPS_student,avg_NPS_faculty,avg_NPS_admin]}
     df = pd.DataFrame.from_dict(NPS_scores)
     return df
+
+@st.cache_data(show_spinner=False)
+def get_impact_satisfaction_ratings(df_admin, df_faculty, df_student) -> pd.DataFrame:
+    data_support_effectiveness = round(df_admin['data_support_effectiveness'].dropna().mean(), 2)
+    health_info_confidence = round(df_student['health_info_confidence'].dropna().mean(), 2)
+    collection_support = round(df_faculty['collection_support_rating'].dropna().mean(), 2)
+    research_materials_satisfaction = round(df_faculty['research_materials_satisfaction'].dropna().mean(), 2)
+    course_materials_satisfaction = round(df_faculty['course_materials_satisfaction'].dropna().mean(), 2)
+    satisfaction_ratings = {'rating':['Data Support Effectiveness (Admin)','Health Info Confidence (Students)','Collection Support (Faculty)', 'Research Materials Satisfaction (Faculty)', 'Course Materials Satisfaction (Faculty)'], 'scores':[data_support_effectiveness,health_info_confidence,collection_support, research_materials_satisfaction, course_materials_satisfaction]}
+    satisfaction_ratings_df = pd.DataFrame.from_dict(satisfaction_ratings)
+    return satisfaction_ratings_df
 
 ## FUTURE ADDITIONS - Student Learning Outcomes
 # Use the dummy code below as a jumping-off point to write functions for loading & cleaning student learning outcomes data.

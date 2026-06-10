@@ -366,6 +366,25 @@ def plot_avg_NPS(df: pd.DataFrame) -> None:
 
     st.plotly_chart(fig, use_container_width=True)
 
+def plot_impact_satisfaction_ratings(df):
+    """
+    Horizontal bar chart plotting key satisfaction ratings across the three Imapct Survey respondent groups (Students, Faculty, and Admin).
+    """
+    if df.empty:
+        st.info("No appointment data available.")
+        return
+
+    labels = {'rating':'Rating','scores':'Mean Score (1-5)'}
+    fig = px.bar(df, x='scores', y='rating', labels=labels, color = 'rating', color_discrete_map={
+    'Data Support Effectiveness (Admin)':CLOUD_BLUE,
+    'Health Info Confidence (Students)':NEW_LEAF,
+    'Collection Support (Faculty)':VINEYARD_GREEN,
+    'Research Materials Satisfaction (Faculty)':FOREST_GREEN,
+    'Course Materials Satisfaction (Faculty)':PACIFIC_BLUE
+    }, text_auto=True)
+
+    st.plotly_chart(fig, use_container_width=True)
+
 ## FUTURE ADDITIONS - Student Learning Outcomes
 
 # Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.
