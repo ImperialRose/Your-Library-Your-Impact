@@ -13,7 +13,7 @@ There is also an AI bot (coming soon) that lets you ask plain-English questions 
 **Holistic Student Engagement**
 Book a Librarian appointment trends from AY21-22 through AY24-25. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
 
-**Collection Value**
+**Collection Activity**
 Physical book circulation data from LibraryWorld. Checkout trends across four academic years.
 
 **Institutional Cost Avoidance**

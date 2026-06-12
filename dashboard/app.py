@@ -106,7 +106,7 @@ if page == "Home":
     # Creating tabs; note - see commented code below for when you want to add more tabs
     t1, t2, t3, t4, t5 = st.tabs([
         "Holistic Student Engagement",
-        "Collection Value",
+        "Collection Activity",
         "Institutional Cost Avoidance",
         "General Student Satisfaction",
         "Qualitative Impact"
@@ -116,7 +116,7 @@ if page == "Home":
     # When ready to add Student Learning Outcomes data, delete the section above and uncomment this section.
     # t1, t2, t3, t4, t5, t6 = st.tabs([
         # "Holistic Student Engagement",
-        # "Collection Value",
+        # "Collection Activity",
         # "Institutional Cost Avoidance",
         # "General Student Satisfaction",
         # "Student Learning Outcomes",
@@ -139,7 +139,7 @@ if page == "Home":
             plot_bioethics_topics(filtered_df)
 
     with t2:
-        st.subheader("Collection Value")
+        st.subheader("Collection Activity")
         st.caption("Physical book circulation from LibraryWorld, AY21-22 through AY24-25.")
         col_cir1, col_cir2, col_cir3, col_cir4, col_cir5 = st.columns(5)
         with col_cir1:

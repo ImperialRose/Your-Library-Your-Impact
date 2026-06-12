@@ -20,7 +20,7 @@ def header_metrics(df: pd.DataFrame) -> None:
 def body_layout_tabs(df) -> None:
     # body_layout_tabs(df: pd.DataFrame) <--- update this when dataframe is ready
     """Tabs layout with 3 default tabs."""
-    t1, t2, t3, t4, t5 = st.tabs(["Holistic Student Engagement","Collection Value", "Institutional Cost Avoidance", "General Student Satisfaction", "Qualitative Impact"])
+    t1, t2, t3, t4, t5 = st.tabs(["Holistic Student Engagement","Collection Activity", "Institutional Cost Avoidance", "General Student Satisfaction", "Qualitative Impact"])
     with t1:
         st.subheader("Holistic Student Engagement")
         tab_choice = st.radio(''':grey[INSERT CAPTION HERE.]''',
@@ -40,9 +40,9 @@ def body_layout_tabs(df) -> None:
             # plot_reports_overtime_line_vax(df)  # <- new chart function here
 
     with t2:
-        st.subheader("Collection Value")
+        st.subheader("Collection Activity")
         st.caption("INSERT CAPTION HERE.")
-        st.write("Charts for collection value section")
+        st.write("Charts for collection activity section")
         # plot_patient_ages(df) #<- new chart function here
         # plot_num_reports_sex(df) #<- new chart function here
         # plot_num_reports_loc(df) #<- new chart function here
