@@ -15,3 +15,4 @@
 /dashboard/data/library_impact_surveys/Library+Strategic+Impact+&+Operational+Efficiency+Survey_May+23,+2026_14.08.zip
 /dashboard/data/library_impact_surveys/Student+Library+Success+&+Impact+Survey_May+23,+2026_14.09.zip
 *.DS_Store
+*.pyc
