@@ -46,7 +46,7 @@ def plot_bookings_by_year(df: pd.DataFrame) -> None:
         paper_bgcolor="white",
         yaxis=dict(gridcolor="#f0f0f0"),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 def plot_bookings_by_quarter(df: pd.DataFrame) -> None:
@@ -104,7 +104,7 @@ def plot_service_type(df: pd.DataFrame) -> None:
         paper_bgcolor="white",
         xaxis=dict(gridcolor="#f0f0f0"),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 def plot_virtual_vs_inperson(df: pd.DataFrame) -> None:
@@ -135,7 +135,7 @@ def plot_virtual_vs_inperson(df: pd.DataFrame) -> None:
         hole=0.4,
     )
     fig.update_layout(title="Appointment Delivery Method")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 def plot_bioethics_topics(df: pd.DataFrame) -> None:
     """Plots bioethics topics discussed in Book A Librarian appointments.
@@ -156,7 +156,7 @@ def plot_bioethics_topics(df: pd.DataFrame) -> None:
                  color_discrete_sequence=[FOREST_GREEN])
     fig.update_xaxes(tickangle=45)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 def plot_satisfaction_means(df: pd.DataFrame, year: int) -> None:
     """
@@ -213,7 +213,7 @@ def plot_satisfaction_means(df: pd.DataFrame, year: int) -> None:
         paper_bgcolor="white",
     )
     with st.container():
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
         st.markdown(
             '<small>'
             '<span style="color:#366732;">■</span> Strong (3.5+) &nbsp;·&nbsp; '
@@ -269,7 +269,7 @@ def plot_satisfaction_comparison(df: pd.DataFrame) -> None:
         paper_bgcolor="white",
         legend_title="Survey Year",
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 def plot_circulation(df: pd.DataFrame, metric: str) -> None:
     """
@@ -307,7 +307,7 @@ def plot_circulation(df: pd.DataFrame, metric: str) -> None:
         yaxis=dict(gridcolor="#f0f0f0"),
         legend_title="Academic Year",
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 def plot_circulation_by_year(df: pd.DataFrame, metric: str) -> None:
@@ -345,7 +345,7 @@ def plot_circulation_by_year(df: pd.DataFrame, metric: str) -> None:
         paper_bgcolor="white",
         yaxis=dict(gridcolor="#f0f0f0"),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 def plot_avg_NPS(df: pd.DataFrame) -> None:
     """
@@ -364,7 +364,7 @@ def plot_avg_NPS(df: pd.DataFrame) -> None:
     fig.add_hline(y=7, line_dash='dash', annotation_text="Passive threshold (7) ",
               annotation_position="top right")
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 def plot_impact_satisfaction_ratings(df):
     """
@@ -383,7 +383,7 @@ def plot_impact_satisfaction_ratings(df):
     'Course Materials Satisfaction (Faculty)':PACIFIC_BLUE
     }, text_auto=True)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 ## FUTURE ADDITIONS - Student Learning Outcomes
 
@@ -397,4 +397,4 @@ def plot_impact_satisfaction_ratings(df):
 
     # [INSERT VISUALIZATION PLOT CODE HERE]
 
-    # st.plotly_chart(fig, use_container_width=True)
+    # st.plotly_chart(fig, width='stretch')
