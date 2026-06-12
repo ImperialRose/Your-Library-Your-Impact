@@ -159,11 +159,12 @@ if page == "Home":
         else:
             with tab1:
 
-                plot_circulation_by_year(circ_df, "Checkin")
-                plot_circulation(circ_df, "Checkin")
-            with tab2:
                 plot_circulation_by_year(circ_df, "Checkout")
                 plot_circulation(circ_df, "Checkout")
+            with tab2:
+
+                plot_circulation_by_year(circ_df, "Checkin")
+                plot_circulation(circ_df, "Checkin")
             with tab3:
 
                 plot_circulation_by_year(circ_df, "Renew")
