@@ -105,7 +105,7 @@ if page == "Home":
 
     # Creating tabs; note - see commented code below for when you want to add more tabs
     t1, t2, t3, t4, t5 = st.tabs([
-        "Holistic Student Engagement",
+        "Service Activity",
         "Collection Activity",
         "Institutional Cost Avoidance",
         "General Student Satisfaction",
@@ -115,7 +115,7 @@ if page == "Home":
     ## FUTURE ADDITION
     # When ready to add Student Learning Outcomes data, delete the section above and uncomment this section.
     # t1, t2, t3, t4, t5, t6 = st.tabs([
-        # "Holistic Student Engagement",
+        # "Service Activity",
         # "Collection Activity",
         # "Institutional Cost Avoidance",
         # "General Student Satisfaction",
@@ -124,7 +124,7 @@ if page == "Home":
     # ])
 
     with t1:
-        st.subheader("Holistic Student Engagement")
+        st.subheader("Service Activity")
         st.caption("Book a Librarian appointment trends across four academic years.")
         filtered_df = render_booking_filters(bookings_df, key_prefix="t1")
         if not filtered_df.empty:
