@@ -10,14 +10,14 @@ There is also an AI bot (coming soon) that lets you ask plain-English questions 
 
 ## What Is In The Dashboard
 
-**Holistic Student Engagement**
-Book a Librarian appointment trends from AY21-22 through AY24-25. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
+**Service Activity**
+Book a Librarian appointment activity and trends. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
 
-**Collection Value**
-Physical book circulation data from LibraryWorld. Checkout trends across four academic years.
+**Collection Activity**
+Physical book circulation data from LibraryWorld, by academic year.
 
-**Institutional Cost Avoidance**
-How much money does the library save PNWU through ILL vs buying classroom licenses? Calculator coming in the next version.
+**Library Costs per Student**
+Collection costs per student by collection resource and academic year.
 
 **General Student Satisfaction**
 PNWU Student Satisfaction Survey results from 2023 and 2025, filterable by program (DO, PT, OT, MAMS).

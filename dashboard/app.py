@@ -105,9 +105,9 @@ if page == "Home":
 
     # Creating tabs; note - see commented code below for when you want to add more tabs
     t1, t2, t3, t4, t5 = st.tabs([
-        "Holistic Student Engagement",
-        "Collection Value",
-        "Institutional Cost Avoidance",
+        "Service Activity",
+        "Collection Activity",
+        "Library Costs per Student",
         "General Student Satisfaction",
         "Qualitative Impact"
     ])
@@ -115,17 +115,17 @@ if page == "Home":
     ## FUTURE ADDITION
     # When ready to add Student Learning Outcomes data, delete the section above and uncomment this section.
     # t1, t2, t3, t4, t5, t6 = st.tabs([
-        # "Holistic Student Engagement",
-        # "Collection Value",
-        # "Institutional Cost Avoidance",
+        # "Service Activity",
+        # "Collection Activity",
+        # "Library Costs per Student",
         # "General Student Satisfaction",
         # "Student Learning Outcomes",
         # "Qualitative Impact"
     # ])
 
     with t1:
-        st.subheader("Holistic Student Engagement")
-        st.caption("Book a Librarian appointment trends across four academic years.")
+        st.subheader("Service Activity")
+        st.caption("Book a Librarian appointment activity and trends.")
         filtered_df = render_booking_filters(bookings_df, key_prefix="t1")
         if not filtered_df.empty:
             plot_bookings_by_year(filtered_df)
@@ -139,8 +139,8 @@ if page == "Home":
             plot_bioethics_topics(filtered_df)
 
     with t2:
-        st.subheader("Collection Value")
-        st.caption("Physical book circulation from LibraryWorld, AY21-22 through AY24-25.")
+        st.subheader("Collection Activity")
+        st.caption("Physical book circulation from LibraryWorld, by academic year.")
         col_cir1, col_cir2, col_cir3, col_cir4, col_cir5 = st.columns(5)
         with col_cir1:
             st.metric("Total Checkouts", circ_df["Checkout"].sum())
@@ -185,13 +185,13 @@ if page == "Home":
             st.warning("Physical checkouts dropped from 415 in AY21-22 to 55 in AY24-25 — an 87% decline. Digital usage data coming when database reports are available.")
 
     with t3:
-        st.subheader("Institutional Cost Avoidance")
-        st.caption("How much money does the library save PNWU through Interlibrary Loan?")
-        st.info("Cost avoidance calculator coming next.")
+        st.subheader("Library Costs per Student")
+        st.caption("Collection costs per student by collection resource and academic year.")
+        st.info("Collection costs per student coming soon.")
 
     with t4:
         st.subheader("General Student Satisfaction")
-        st.caption("PNWU Student Satisfaction Survey — library questions only. Scale 1-5.")
+        st.caption("PNWU Student Satisfaction Survey, library questions only. Scale 1-5.")
         survey_tab1, survey_tab2, survey_tab3 = st.tabs(["2023", "2025", "Year-over-Year"])
         with survey_tab1:
             if sat23_df.empty:
@@ -228,7 +228,7 @@ if page == "Home":
         if NPS_scores_df.empty:
             st.warning("NPS score data not found.")
         else:
-            st.caption("Students, i.e. the most frequent users of the library, gave the highest NPS score. Faculty rated the library just below the passive threshold (NPS 7): they know the library is there but do not see it as a true partner in their own teaching & research. Administrators, i.e. those setting budgets, allocating resources, and driving institutional decisions, gave the lowest score.")
+            st.caption("Students, the most frequent users of the library, gave the highest NPS score. Faculty rated the library just below the passive threshold (NPS 7): they know the library is there but do not see it as a true partner in their own teaching & research. Administrators gave the lowest score.")
             plot_avg_NPS(NPS_scores_df)
         st.markdown("#### Satisfaction Ratings Across All Groups")
         if satisfaction_ratings_df.empty:
