@@ -16,8 +16,8 @@ Book a Librarian appointment trends from AY21-22 through AY24-25. Filterable by 
 **Collection Activity**
 Physical book circulation data from LibraryWorld. Checkout trends across four academic years.
 
-**Institutional Cost Avoidance**
-How much money does the library save PNWU through ILL vs buying classroom licenses? Calculator coming in the next version.
+**Library Costs per Student**
+Collection costs per student by collection resource and academic year.
 
 **General Student Satisfaction**
 PNWU Student Satisfaction Survey results from 2023 and 2025, filterable by program (DO, PT, OT, MAMS).

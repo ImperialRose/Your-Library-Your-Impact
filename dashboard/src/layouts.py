@@ -20,7 +20,7 @@ def header_metrics(df: pd.DataFrame) -> None:
 def body_layout_tabs(df) -> None:
     # body_layout_tabs(df: pd.DataFrame) <--- update this when dataframe is ready
     """Tabs layout with 3 default tabs."""
-    t1, t2, t3, t4, t5 = st.tabs(["Service Activity","Collection Activity", "Institutional Cost Avoidance", "General Student Satisfaction", "Qualitative Impact"])
+    t1, t2, t3, t4, t5 = st.tabs(["Service Activity","Collection Activity", "Library Costs per Student", "General Student Satisfaction", "Qualitative Impact"])
     with t1:
         st.subheader("Service Activity")
         tab_choice = st.radio(''':grey[INSERT CAPTION HERE.]''',
@@ -48,9 +48,9 @@ def body_layout_tabs(df) -> None:
         # plot_num_reports_loc(df) #<- new chart function here
 
     with t3:
-        st.subheader("Institutional Cost Avoidance")
+        st.subheader("Library Costs per Student")
         st.caption("CAPTION HERE.")
-        st.write("Charts for institutional cost avoidance section")
+        st.write("Charts for library costs per student section")
         # plot_most_common_symptoms(df) #<-chart function here
 
     with t4:

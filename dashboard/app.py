@@ -107,7 +107,7 @@ if page == "Home":
     t1, t2, t3, t4, t5 = st.tabs([
         "Service Activity",
         "Collection Activity",
-        "Institutional Cost Avoidance",
+        "Library Costs per Student",
         "General Student Satisfaction",
         "Qualitative Impact"
     ])
@@ -117,7 +117,7 @@ if page == "Home":
     # t1, t2, t3, t4, t5, t6 = st.tabs([
         # "Service Activity",
         # "Collection Activity",
-        # "Institutional Cost Avoidance",
+        # "Library Costs per Student",
         # "General Student Satisfaction",
         # "Student Learning Outcomes",
         # "Qualitative Impact"
@@ -185,9 +185,9 @@ if page == "Home":
             st.warning("Physical checkouts dropped from 415 in AY21-22 to 55 in AY24-25 — an 87% decline. Digital usage data coming when database reports are available.")
 
     with t3:
-        st.subheader("Institutional Cost Avoidance")
-        st.caption("How much money does the library save PNWU through Interlibrary Loan?")
-        st.info("Cost avoidance calculator coming next.")
+        st.subheader("Library Costs per Student")
+        st.caption("Collection costs per student by collection resource and academic year.")
+        st.info("Collection costs per student coming soon.")
 
     with t4:
         st.subheader("General Student Satisfaction")
