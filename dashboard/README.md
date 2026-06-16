@@ -11,10 +11,10 @@ There is also an AI bot (coming soon) that lets you ask plain-English questions 
 ## What Is In The Dashboard
 
 **Service Activity**
-Book a Librarian appointment trends from AY21-22 through AY24-25. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
+Book a Librarian appointment activity and trends. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
 
 **Collection Activity**
-Physical book circulation data from LibraryWorld. Checkout trends across four academic years.
+Physical book circulation data from LibraryWorld, by academic year.
 
 **Library Costs per Student**
 Collection costs per student by collection resource and academic year.
