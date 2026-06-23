@@ -37,7 +37,7 @@ def load_bookings() -> pd.DataFrame:
     """
     frames = []
     for fname in BOOKING_FILES:
-        fpath = DATA_DIR / fname
+        fpath = DATA_DIR / "book_a_librarian" / fname
         if not fpath.exists():
             continue
         df = pd.read_excel(fpath)
