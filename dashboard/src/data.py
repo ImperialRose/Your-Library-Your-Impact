@@ -6,7 +6,8 @@ from pathlib import Path
 # Here Path() means relative to this files location
 DATA_DIR = Path(__file__).parent.parent / "data"
 
-# Book a Librarian files
+# Book a Librarian files, used in Service Activity tab
+BOOKING_DIR = "book_a_librarian"
 BOOKING_FILES = [
     "Bookings Report Data AY21-22 - Deidentified.xlsx",
     "Book A Librarian Export Q1 AY22-23 - Deidentified.xlsx",
@@ -37,7 +38,7 @@ def load_bookings() -> pd.DataFrame:
     """
     frames = []
     for fname in BOOKING_FILES:
-        fpath = DATA_DIR / "book_a_librarian" / fname
+        fpath = DATA_DIR / BOOKING_DIR / fname
         if not fpath.exists():
             continue
         df = pd.read_excel(fpath)
