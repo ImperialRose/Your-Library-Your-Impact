@@ -368,7 +368,7 @@ def plot_costs_sum_per_student(df: pd.DataFrame) -> None:
         x = costs_df.index,
         y = costs_df.values,
         orientation = "v",
-        color_discrete_sequence=[VINEYARD_GREEN]
+        color_discrete_sequence=[FOREST_GREEN]
     )
     fig.update_traces(textposition="outside")
     fig.update_layout(
