@@ -347,6 +347,42 @@ def plot_circulation_by_year(df: pd.DataFrame, metric: str) -> None:
     )
     st.plotly_chart(fig, width='stretch')
 
+def plot_costs_sum_per_student(df: pd.DataFrame) -> None:
+    '''
+    Bar chart plotting cost per student per academic year
+    '''
+
+    if df.empty or "AY21-22" not in df.columns:
+        st.info("No cost per student data available.")
+        return
+
+    df.set_index('Resource', inplace = True)
+
+    costs_df = pd.Series(
+        df.loc['TOTAL PER STUDENT'].values, # the cost
+        df.loc['TOTAL PER STUDENT'].index # the academic year
+    )
+
+    fig = px.bar(
+        costs_df,
+        x = costs_df.index,
+        y = costs_df.values,
+        orientation = "v",
+        color_discrete_sequence=[VINEYARD_GREEN]
+    )
+    fig.update_traces(textposition="outside")
+    fig.update_layout(
+        title="Cost per Student by Academic Year",
+        xaxis_title="Acaedmic Year",
+        yaxis_title="Dollars",
+        plot_bgcolor="white",
+        paper_bgcolor="white",
+        xaxis=dict(gridcolor="#f0f0f0"),
+    )
+
+    st.plotly_chart(fig, width='stretch')
+
+    return
 def plot_avg_NPS(df: pd.DataFrame) -> None:
     """
     Bar chart plotting the average Net Promoter Score for each of the three Impact Survey respondent groups (Students, Faculty, and Admin).
