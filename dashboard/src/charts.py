@@ -382,21 +382,6 @@ def plot_costs_sum_per_student(df: pd.DataFrame) -> None:
 
     st.plotly_chart(fig, width='stretch')
 
-    return
-
-def plot_costs_by_resource(df: pd.DataFrame) -> None:
-    '''
-    Bar chart plotting cost per student per resource per academic year
-    '''
-
-    if df.empty or "AY21-22" not in df.columns:
-        st.info("No cost per student data available.")
-        return
-
-    st.info("Cost by Resource coming soon.")
-
-    return
-
 def plot_avg_NPS(df: pd.DataFrame) -> None:
     """
     Bar chart plotting the average Net Promoter Score for each of the three Impact Survey respondent groups (Students, Faculty, and Admin).
