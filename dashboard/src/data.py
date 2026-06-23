@@ -253,6 +253,24 @@ def get_impact_satisfaction_ratings(df_admin, df_faculty, df_student) -> pd.Data
     satisfaction_ratings_df = pd.DataFrame.from_dict(satisfaction_ratings)
     return satisfaction_ratings_df
 
+
+@st.cache_data(show_spinner=False)
+def load_costs() -> pd.DataFrame:
+    '''
+    Loads collection cost per student data.
+    Expects first column to be collection resource
+    and subsequent columns to be cost per student per academic year (USD).
+    '''
+
+    fname = ("Collection Cost per Student FINAL.xlsx")
+    fpath = DATA_DIR / "costs" / fname
+    if not fpath.exists():
+        return pd.DataFrame()
+    df_costs = pd.read_excel(fpath)
+
+    return df_costs
+
+
 ## FUTURE ADDITIONS - Student Learning Outcomes
 # Use the dummy code below as a jumping-off point to write functions for loading & cleaning student learning outcomes data.
 # Edit & complete this section and un-comment this code block when you are ready to add Student Learning Outcomes data to the dashboard.
