@@ -170,11 +170,13 @@ def load_satisfaction_both() -> pd.DataFrame:
 # Format is consistent across all years — monthly rows with
 # Checkout, Checkin, Renew, In House, Hold, Lost, Found columns.
 
+CIRCULATION_DIR = "library_world_circulation_count"
+
 CIRCULATION_FILES = {
-    "AY21-22": "library_world_circulation_count/Library World Circulation Count AY21-22 - Deidentified.pdf",
-    "AY22-23": "library_world_circulation_count/Library World Circulation Count AY22-23 - Deidentified.pdf",
-    "AY23-24": "library_world_circulation_count/Library World Circulation Count AY23-24 - Deidentified.pdf",
-    "AY24-25": "library_world_circulation_count/Library World Circulation Count AY24-25 - Deidentified.pdf",
+    "AY21-22": "Library World Circulation Count AY21-22 - Deidentified.pdf",
+    "AY22-23": "Library World Circulation Count AY22-23 - Deidentified.pdf",
+    "AY23-24": "Library World Circulation Count AY23-24 - Deidentified.pdf",
+    "AY24-25": "Library World Circulation Count AY24-25 - Deidentified.pdf",
 }
 
 @st.cache_data(show_spinner=False)
@@ -189,7 +191,7 @@ def load_circulation() -> pd.DataFrame:
     all_rows = []
 
     for ay, fname in CIRCULATION_FILES.items():
-        fpath = DATA_DIR / fname
+        fpath = DATA_DIR / CIRCULATION_DIR / fname
         if not fpath.exists():
             continue
 
