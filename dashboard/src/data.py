@@ -93,6 +93,11 @@ def load_bookings() -> pd.DataFrame:
 
     return combined
 
+
+# Survey data, used in General Student Satisfaction tab
+
+SATISFACTION_DIR = "student_satisfaction"
+
 # Separate years if diff questions
 
 QUESTION_LABELS_2023 = {
@@ -128,7 +133,7 @@ def load_satisfaction(year: int) -> pd.DataFrame:
         f"{year} PNWU Student Satisfaction Survey"
         " - Raw Data - Library Likert-scale Questions.xlsx"
     )
-    fpath = DATA_DIR / "student_satisfaction" / fname
+    fpath = DATA_DIR / SATISFACTION_DIR / fname
     if not fpath.exists():
         return pd.DataFrame()
 
