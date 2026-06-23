@@ -165,10 +165,10 @@ def load_satisfaction_both() -> pd.DataFrame:
 # Checkout, Checkin, Renew, In House, Hold, Lost, Found columns.
 
 CIRCULATION_FILES = {
-    "AY21-22": "library world circulation count/Library World Circulation Count AY21-22 - Deidentified.pdf",
-    "AY22-23": "library world circulation count/Library World Circulation Count AY22-23 - Deidentified.pdf",
-    "AY23-24": "library world circulation count/Library World Circulation Count AY23-24 - Deidentified.pdf",
-    "AY24-25": "library world circulation count/Library World Circulation Count AY24-25 - Deidentified.pdf",
+    "AY21-22": "library_world_circulation_count/Library World Circulation Count AY21-22 - Deidentified.pdf",
+    "AY22-23": "library_world_circulation_count/Library World Circulation Count AY22-23 - Deidentified.pdf",
+    "AY23-24": "library_world_circulation_count/Library World Circulation Count AY23-24 - Deidentified.pdf",
+    "AY24-25": "library_world_circulation_count/Library World Circulation Count AY24-25 - Deidentified.pdf",
 }
 
 @st.cache_data(show_spinner=False)
