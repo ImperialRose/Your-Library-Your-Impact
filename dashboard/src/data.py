@@ -283,6 +283,11 @@ def get_impact_satisfaction_ratings(df_admin, df_faculty, df_student) -> pd.Data
     return satisfaction_ratings_df
 
 
+# Cost data, used in Library Costs per Student tab
+
+COSTS_DIR = "costs"
+COSTS_FILE = "Collection Cost per Student FINAL.xlsx"
+
 @st.cache_data(show_spinner=False)
 def load_costs() -> pd.DataFrame:
     '''
@@ -291,8 +296,8 @@ def load_costs() -> pd.DataFrame:
     and subsequent columns to be cost per student per academic year (USD).
     '''
 
-    fname = ("Collection Cost per Student FINAL.xlsx")
-    fpath = DATA_DIR / "costs" / fname
+    fname = COSTS_FILE
+    fpath = DATA_DIR / COSTS_DIR / fname
     if not fpath.exists():
         return pd.DataFrame()
     df_costs = pd.read_excel(fpath)
