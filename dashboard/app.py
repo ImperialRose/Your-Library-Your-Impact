@@ -21,7 +21,6 @@ from src.charts import (
     plot_circulation,
     plot_circulation_by_year,
     plot_costs_sum_per_student,
-    plot_costs_by_resource,
     plot_avg_NPS,
     plot_impact_satisfaction_ratings
 )
@@ -191,15 +190,10 @@ if page == "Home":
     with t3:
         st.subheader("Library Costs per Student")
         st.caption("Collection costs per student by collection resource and academic year.")
-        tab1, tab2 = st.tabs(["Cost per Student", "Cost per Student by Resource"])
-
         if costs_df.empty:
             st.error("No cost data found")
         else:
-            with tab1:
-                plot_costs_sum_per_student(costs_df)
-            with tab2:
-                plot_costs_by_resource(costs_df)
+            plot_costs_sum_per_student(costs_df)
 
     with t4:
         st.subheader("General Student Satisfaction")
