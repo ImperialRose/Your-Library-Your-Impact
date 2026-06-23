@@ -6,7 +6,8 @@ from pathlib import Path
 # Here Path() means relative to this files location
 DATA_DIR = Path(__file__).parent.parent / "data"
 
-# Book a Librarian files
+# Book a Librarian files, used in Service Activity tab
+BOOKING_DIR = "book_a_librarian"
 BOOKING_FILES = [
     "Bookings Report Data AY21-22 - Deidentified.xlsx",
     "Book A Librarian Export Q1 AY22-23 - Deidentified.xlsx",
@@ -37,7 +38,7 @@ def load_bookings() -> pd.DataFrame:
     """
     frames = []
     for fname in BOOKING_FILES:
-        fpath = DATA_DIR / fname
+        fpath = DATA_DIR / BOOKING_DIR / fname
         if not fpath.exists():
             continue
         df = pd.read_excel(fpath)
@@ -92,6 +93,11 @@ def load_bookings() -> pd.DataFrame:
 
     return combined
 
+
+# Survey data, used in General Student Satisfaction tab
+
+SATISFACTION_DIR = "student_satisfaction"
+
 # Separate years if diff questions
 
 QUESTION_LABELS_2023 = {
@@ -127,7 +133,7 @@ def load_satisfaction(year: int) -> pd.DataFrame:
         f"{year} PNWU Student Satisfaction Survey"
         " - Raw Data - Library Likert-scale Questions.xlsx"
     )
-    fpath = DATA_DIR / fname
+    fpath = DATA_DIR / SATISFACTION_DIR / fname
     if not fpath.exists():
         return pd.DataFrame()
 
@@ -164,11 +170,13 @@ def load_satisfaction_both() -> pd.DataFrame:
 # Format is consistent across all years — monthly rows with
 # Checkout, Checkin, Renew, In House, Hold, Lost, Found columns.
 
+CIRCULATION_DIR = "library_world_circulation_count"
+
 CIRCULATION_FILES = {
-    "AY21-22": "library world circulation count/Library World Circulation Count AY21-22 - Deidentified.pdf",
-    "AY22-23": "library world circulation count/Library World Circulation Count AY22-23 - Deidentified.pdf",
-    "AY23-24": "library world circulation count/Library World Circulation Count AY23-24 - Deidentified.pdf",
-    "AY24-25": "library world circulation count/Library World Circulation Count AY24-25 - Deidentified.pdf",
+    "AY21-22": "Library World Circulation Count AY21-22 - Deidentified.pdf",
+    "AY22-23": "Library World Circulation Count AY22-23 - Deidentified.pdf",
+    "AY23-24": "Library World Circulation Count AY23-24 - Deidentified.pdf",
+    "AY24-25": "Library World Circulation Count AY24-25 - Deidentified.pdf",
 }
 
 @st.cache_data(show_spinner=False)
@@ -183,7 +191,7 @@ def load_circulation() -> pd.DataFrame:
     all_rows = []
 
     for ay, fname in CIRCULATION_FILES.items():
-        fpath = DATA_DIR / fname
+        fpath = DATA_DIR / CIRCULATION_DIR / fname
         if not fpath.exists():
             continue
 
@@ -218,19 +226,40 @@ def load_circulation() -> pd.DataFrame:
     df = df.sort_values("Month")
     return df
 
+# Impact survey data, used in Qualitative Impact tab
+
+IMPACT_DIR = "library_impact_surveys/clean"
+ADMIN_IMPACT_FILE = "admin_clean_full.csv"
+FACULTY_IMPACT_FILE = "faculty_clean_full.csv"
+STUDENT_IMPACT_FILE = "student_clean_full.csv"
+
 @st.cache_data(show_spinner=False)
 def load_admin_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/admin_clean_full.csv')
+    fname = ADMIN_IMPACT_FILE
+    fpath = DATA_DIR / IMPACT_DIR / fname
+    if not fpath.exists():
+        return pd.DataFrame
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
 def load_faculty_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/faculty_clean_full.csv')
+    fname = FACULTY_IMPACT_FILE
+    fpath = DATA_DIR / IMPACT_DIR / fname
+    if not fpath.exists():
+        return pd.DataFrame
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
 def load_student_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/student_clean_full.csv')
+
+    fname = STUDENT_IMPACT_FILE
+    fpath = DATA_DIR / IMPACT_DIR / fname
+    if not fpath.exists():
+        return pd.DataFrame()
+
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
@@ -254,6 +283,11 @@ def get_impact_satisfaction_ratings(df_admin, df_faculty, df_student) -> pd.Data
     return satisfaction_ratings_df
 
 
+# Cost data, used in Library Costs per Student tab
+
+COSTS_DIR = "costs"
+COSTS_FILE = "Collection Cost per Student FINAL.xlsx"
+
 @st.cache_data(show_spinner=False)
 def load_costs() -> pd.DataFrame:
     '''
@@ -262,8 +296,8 @@ def load_costs() -> pd.DataFrame:
     and subsequent columns to be cost per student per academic year (USD).
     '''
 
-    fname = ("Collection Cost per Student FINAL.xlsx")
-    fpath = DATA_DIR / "costs" / fname
+    fname = COSTS_FILE
+    fpath = DATA_DIR / COSTS_DIR / fname
     if not fpath.exists():
         return pd.DataFrame()
     df_costs = pd.read_excel(fpath)
