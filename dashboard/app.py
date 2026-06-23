@@ -6,6 +6,7 @@ from src.data import (load_bookings,
                       load_admin_quant_data,
                       load_faculty_quant_data,
                       load_student_quant_data,
+                      load_costs,
                       get_NPS_scores,
                       get_impact_satisfaction_ratings)
 from src.filters import render_booking_filters, render_satisfaction_filters
@@ -19,6 +20,8 @@ from src.charts import (
     plot_satisfaction_comparison,
     plot_circulation,
     plot_circulation_by_year,
+    plot_costs_sum_per_student,
+    plot_costs_by_resource,
     plot_avg_NPS,
     plot_impact_satisfaction_ratings
 )
@@ -70,6 +73,7 @@ sat23_df = load_satisfaction(2023)
 sat25_df = load_satisfaction(2025)
 sat_both_df = load_satisfaction_both()
 circ_df = load_circulation()
+costs_df = load_costs()
 admin_df = load_admin_quant_data()
 faculty_df = load_faculty_quant_data()
 student_df = load_student_quant_data()
@@ -187,7 +191,15 @@ if page == "Home":
     with t3:
         st.subheader("Library Costs per Student")
         st.caption("Collection costs per student by collection resource and academic year.")
-        st.info("Collection costs per student coming soon.")
+        tab1, tab2 = st.tabs(["Cost per Student", "Cost per Student by Resource"])
+
+        if costs_df.empty:
+            st.error("No cost data found")
+        else:
+            with tab1:
+                plot_costs_sum_per_student(costs_df)
+            with tab2:
+                plot_costs_by_resource(costs_df)
 
     with t4:
         st.subheader("General Student Satisfaction")
