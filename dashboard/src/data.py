@@ -127,7 +127,7 @@ def load_satisfaction(year: int) -> pd.DataFrame:
         f"{year} PNWU Student Satisfaction Survey"
         " - Raw Data - Library Likert-scale Questions.xlsx"
     )
-    fpath = DATA_DIR / fname
+    fpath = DATA_DIR / "student_satisfaction" / fname
     if not fpath.exists():
         return pd.DataFrame()
 
