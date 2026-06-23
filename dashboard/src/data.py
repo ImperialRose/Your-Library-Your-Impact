@@ -226,14 +226,28 @@ def load_circulation() -> pd.DataFrame:
     df = df.sort_values("Month")
     return df
 
+# Impact survey data, used in Qualitative Impact tab
+
+IMPACT_DIR = "library_impact_surveys/clean"
+ADMIN_IMPACT_FILE = "admin_clean_full.csv"
+FACULTY_IMPACT_FILE = "faculty_clean_full.csv"
+
 @st.cache_data(show_spinner=False)
 def load_admin_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/admin_clean_full.csv')
+    fname = ADMIN_IMPACT_FILE
+    fpath = IMPACT_DIR / fname
+    if not fpath.exists()
+        return pd.DataFrame
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
 def load_faculty_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/faculty_clean_full.csv')
+    fname = FACULTY_IMPACT_FILE
+    fpath = IMPACT_DIR / fname
+    if not fpath.exists()
+        return pd.DataFrame
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
