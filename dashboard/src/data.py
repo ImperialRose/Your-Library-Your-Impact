@@ -231,11 +231,12 @@ def load_circulation() -> pd.DataFrame:
 IMPACT_DIR = "library_impact_surveys/clean"
 ADMIN_IMPACT_FILE = "admin_clean_full.csv"
 FACULTY_IMPACT_FILE = "faculty_clean_full.csv"
+STUDENT_IMPACT_FILE = "student_clean_full.csv"
 
 @st.cache_data(show_spinner=False)
 def load_admin_quant_data() -> pd.DataFrame:
     fname = ADMIN_IMPACT_FILE
-    fpath = IMPACT_DIR / fname
+    fpath = DATA_DIR / IMPACT_DIR / fname
     if not fpath.exists()
         return pd.DataFrame
     df = pd.read_csv(fpath)
@@ -244,7 +245,7 @@ def load_admin_quant_data() -> pd.DataFrame:
 @st.cache_data(show_spinner=False)
 def load_faculty_quant_data() -> pd.DataFrame:
     fname = FACULTY_IMPACT_FILE
-    fpath = IMPACT_DIR / fname
+    fpath = DATA_DIR / IMPACT_DIR / fname
     if not fpath.exists()
         return pd.DataFrame
     df = pd.read_csv(fpath)
@@ -252,7 +253,13 @@ def load_faculty_quant_data() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def load_student_quant_data() -> pd.DataFrame:
-    df = pd.read_csv('../dashboard/data/library_impact_surveys/clean/student_clean_full.csv')
+
+    fname = STUDENT_IMPACT_FILE
+    fpath = DATA_DIR / IMPACT_DIR / fname
+    if not fpath.exists():
+        return pd.DataFrame()
+
+    df = pd.read_csv(fpath)
     return df
 
 @st.cache_data(show_spinner=False)
