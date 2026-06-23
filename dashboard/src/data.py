@@ -237,7 +237,7 @@ STUDENT_IMPACT_FILE = "student_clean_full.csv"
 def load_admin_quant_data() -> pd.DataFrame:
     fname = ADMIN_IMPACT_FILE
     fpath = DATA_DIR / IMPACT_DIR / fname
-    if not fpath.exists()
+    if not fpath.exists():
         return pd.DataFrame
     df = pd.read_csv(fpath)
     return df
@@ -246,7 +246,7 @@ def load_admin_quant_data() -> pd.DataFrame:
 def load_faculty_quant_data() -> pd.DataFrame:
     fname = FACULTY_IMPACT_FILE
     fpath = DATA_DIR / IMPACT_DIR / fname
-    if not fpath.exists()
+    if not fpath.exists():
         return pd.DataFrame
     df = pd.read_csv(fpath)
     return df
