@@ -373,7 +373,7 @@ def plot_costs_sum_per_student(df: pd.DataFrame) -> None:
     fig.update_traces(textposition="outside")
     fig.update_layout(
         title="Cost per Student by Academic Year",
-        xaxis_title="Acaedmic Year",
+        xaxis_title="Academic Year",
         yaxis_title="Dollars",
         plot_bgcolor="white",
         paper_bgcolor="white",
