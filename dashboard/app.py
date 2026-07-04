@@ -185,7 +185,7 @@ if page == "Home":
 
                 plot_circulation_by_year(circ_df, "Found")
                 plot_circulation(circ_df, "Found")
-            st.warning("Physical checkouts dropped from 415 in AY21-22 to 55 in AY24-25 — an 87% decline. Digital usage data coming when database reports are available.")
+            st.info("Physical checkouts dropped from 415 in AY21-22 to 55 in AY24-25 — an 87% decline. Digital usage data coming when database reports are available.")
 
     with t3:
         st.subheader("Library Costs per Student")
