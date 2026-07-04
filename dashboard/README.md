@@ -1,52 +1,24 @@
-# Your Library, Your Impact Dashboard
+## Your Library, Your Impact: Dashboard
 
-A data analytics dashboard and AI insights bot built for the PNWU Health Sciences Library. Built by E.R.A.I. Informatics as a UW MSIM capstone project, 2025-2026.
+The dashboard includes visualizations of the library's service and collection activities, costs, and various survey results.
 
-## What This Is
+To run the dashboard locally, use `python3 -m streamlit run dashboard/app.py`. The dashboard opens at `http://localhost:8501`.
 
-The library collects a lot of data — appointment logs, satisfaction surveys, circulation reports — but it lived in spreadsheets and PDFs that nobody looked at. This dashboard pulls it all together into one place so library staff and leadership can actually use it.
+Most visualizations are presented by academic year. The PNWU academic year runs from July to June. For example, AY25-26 is July 1, 2025 to June 30, 2026.
 
-There is also an AI bot (coming soon) that lets you ask plain-English questions about the data and get answers grounded in real numbers. The bot is modeled after SJSU Library's KingbotGPT project.
-
-## What Is In The Dashboard
+The dashboard includes the following sections:
 
 **Service Activity**
 Book a Librarian appointment activity and trends. Filterable by academic year and service type. The strategic plan target is 5% annual growth.
 
 **Collection Activity**
-Physical book circulation data from LibraryWorld, by academic year.
+Physical book circulation data, by academic year.
 
 **Library Costs per Student**
-Collection costs per student by collection resource and academic year.
+Collection costs per student, by academic year.
 
 **General Student Satisfaction**
-PNWU Student Satisfaction Survey results from 2023 and 2025, filterable by program (DO, PT, OT, MAMS).
+PNWU Student Satisfaction Survey results. Filterable by program. Programs include College of Osteopathic Medicine, Master of Arts in Medical Sciences, School of Occupational Therapy, and School of Physical Therapy.
 
 **Qualitative Impact**
-Real anonymized student quotes from open-text survey responses.
-
-## How To Run It Locally
-
-1. Clone the repo
-2. Go into the dashboard folder: `cd Your-Library-Your-Impact/dashboard`
-3. Install dependencies: `pip3 install streamlit plotly pandas openpyxl pypdf`
-4. Run: `python3 -m streamlit run app.py`
-
-## How To Add New Data
-
-- **New appointment quarter** — drop the Excel file in `data/`, add filename to `BOOKING_FILES` in `src/data.py`
-- **New survey year** — add a new label map in `src/data.py`, update `load_satisfaction()`
-- **New AI bot knowledge** — add a `.txt` file to `data/knowledge/`, bot picks it up automatically
-
-## Team
-ERAI Infomatics 
-- Em Stelter 
-- Roosevelt Brown 
-- AJ Amrous
-- Ivette Ivanov 
-- Jan Kuebel-Hernandez — project sponsor, PNWU Health Sciences Library
-
-## Acknowledgments
-
-Bot architecture modeled after [SJSU Library KingbotGPT](https://github.com/sjsu-library/kingbotgpt).
-Dashboard structure inspired by IMT 561 lab scaffold by Dr. Shane McGarry at UW iSchool.
+Results from a mixed impact (qualitative and quantitative) survey of students, faculty & staff, and administration. Survey developed by E.R.A.I. Informatics and the PNWU Library and administered in Q3 AY25-26.
