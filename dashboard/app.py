@@ -219,7 +219,7 @@ if page == "Home":
 
     with t5:
         st.subheader("Qualitative Impact")
-        st.caption("Results from the E.R.A.I. Informatics and the PNWU Library mixed impact survey (qualitative and quantitative), administered Q3 AY25-25 (calendar Q1 2026).")
+        st.caption("Results from the E.R.A.I. Informatics and the PNWU Library mixed impact survey (qualitative and quantitative) of students, faculty & staff, and administration. Survey administered Q3 AY25-25 (calendar Q1 2026).")
         subtab1, subtab2 = st.tabs(["Average NPS Score by Respondent Group", "Satisfaction Ratings Across All Groups"])
         with subtab1:
             if NPS_scores_df.empty:
