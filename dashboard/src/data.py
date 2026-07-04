@@ -164,7 +164,7 @@ def load_satisfaction_both() -> pd.DataFrame:
         return pd.DataFrame()
     return pd.concat(frames, ignore_index=True)
 
-# Circulation Data 
+# Circulation Data, used in Collection Activity tab 
 # Physical book checkout data from LibraryWorld
 # Extract the text and parse it into a dataframe
 # Format is consistent across all years — monthly rows with
