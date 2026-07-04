@@ -58,7 +58,7 @@ with st.sidebar:
     st.markdown("---")
     page = st.radio(
         "Navigate",
-        ["Home", "Insight Bot"],
+        ["Home", "Insights Bot"],
         label_visibility="collapsed",
     )
     st.markdown("---")
@@ -143,7 +143,7 @@ if page == "Home":
 
     with t2:
         st.subheader("Collection Activity")
-        st.caption("Physical book circulation from LibraryWorld, by academic year.")
+        st.caption("Physical book circulation data, by academic year.")
         col_cir1, col_cir2, col_cir3, col_cir4, col_cir5 = st.columns(5)
         with col_cir1:
             st.metric("Total Checkouts", circ_df["Checkout"].sum())
@@ -219,7 +219,7 @@ if page == "Home":
 
     with t5:
         st.subheader("Qualitative Impact")
-        st.caption("Results from the E.R.A.I. Informatics and the PNWU Library mixed impact survey (qualitative and quantitative) of students, faculty & staff, and administration. Survey administered Q3 AY25-26 (calendar Q1 2026).")
+        st.caption("Results from a mixed impact (qualitative and quantitative) survey of students, faculty & staff, and administration. Survey developed by E.R.A.I. Informatics and the PNWU Library, administered Q3 AY25-26 (calendar Q1 2026).")
         subtab1, subtab2 = st.tabs(["Average NPS Score by Respondent Group", "Satisfaction Ratings Across All Groups"])
         with subtab1:
             if NPS_scores_df.empty:
@@ -249,7 +249,7 @@ if page == "Home":
     </div>
     """, unsafe_allow_html=True)
 
-elif page == "Insight Bot":
+elif page == "Insights Bot":
     st.markdown("## AI Insights Bot")
     st.info(
         "The AI bot is coming in the next step. "
