@@ -166,6 +166,8 @@ def plot_satisfaction_means(df: pd.DataFrame, year: int) -> None:
     Green = strong, yellow = okay, red = needs work.
     """
     if df.empty:
+        # TODO this can also happen if you've filtered out all programs
+        # and should be a different error message in that case
         st.info(f"No satisfaction data available for {year}.")
         return
 
