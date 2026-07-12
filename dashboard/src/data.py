@@ -228,7 +228,7 @@ def load_circulation() -> pd.DataFrame:
 
 # Impact survey data, used in Qualitative Impact tab
 
-IMPACT_DIR = "library_impact_surveys/clean"
+IMPACT_DIR = "library_impact_surveys"
 ADMIN_IMPACT_FILE = "admin_clean_full.csv"
 FACULTY_IMPACT_FILE = "faculty_clean_full.csv"
 STUDENT_IMPACT_FILE = "student_clean_full.csv"
