@@ -140,7 +140,14 @@ def load_satisfaction(year: int) -> pd.DataFrame:
     df = pd.read_excel(fpath)
 
     # Use the right label map for each year
-    labels = QUESTION_LABELS_2023 if year == 2023 else QUESTION_LABELS_2025
+    match year:
+        case 2023:
+            labels = QUESTION_LABELS_2023
+        case 2025:
+            labels = QUESTION_LABELS_2025
+        case _:
+            labels = QUESTION_LABELS_2025
+
     df = df.rename(columns=labels)
 
     question_cols = list(labels.values())
