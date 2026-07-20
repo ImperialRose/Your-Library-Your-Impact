@@ -2,7 +2,7 @@
 
 This project is a data analytics dashboard and AI insights bot.
 
-The project was designed and built for the Pacific Northwest University (PNWU) Health Sciences Library by E.R.A.I. Informatics as a University of Washington Master of Science in Information Management (MSIM) capstone project, 2025-2026. It was designed to be adapted by other PWNU departments or other small academic libraries. <!-- Read the [LICENSE.md](license.md) file for additional information on adapting this work. -->
+The project was designed and built for the Pacific Northwest University (PNWU) Health Sciences Library by E.R.A.I. Informatics as a University of Washington Master of Science in Information Management (MSIM) capstone project, 2025-2026. It was designed to be adapted by other PNWU departments or other small academic libraries. <!-- Read the [LICENSE.md](license.md) file for additional information on adapting this work. -->
 
 ## Background
 
