@@ -24,7 +24,7 @@ The bot uses a retrieval-augmented generation (RAG) -based large language model 
 
 ## Prerequisites
 
-* Python 3.9 or later (required for both dashboard and insights bot)
+* Python 3.10 or later (required for both dashboard and insights bot)
 * [Ollama](https://ollama.com/download) (required for insights bot only)
 
 ## Installation
