@@ -250,9 +250,42 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
 elif page == "Insights Bot":
+    from src.bot import answer, OLLAMA_HOST, OLLAMA_MODEL
+
     st.markdown("## AI Insights Bot")
-    st.info(
-        "The AI bot is coming in the next step. "
-        "It will use LlamaIndex + ChromaDB "
-        "modeled on SJSU Library's KingbotGPT architecture."
+    st.caption(
+        "Ask about service activity (Book a Librarian appointments) or student satisfaction (PNWU Student Satisfaction Surveys)."
     )
+    st.caption(
+        "Answers are computed directly from the dashboard data. The "
+        f"local model ({OLLAMA_MODEL}) only interprets your question."
+    )
+
+    with st.expander("Example questions"):
+        st.markdown(
+            "- How many Book a Librarian appointments were there in 2023-2024?\n"
+            "- What percent of AY24-25 appointments were virtual?\n"
+            "- Break down appointments by service for AY23-24\n"
+            "- How many appointments each year?\n"
+            "- Show the 2025 satisfaction scores"
+        )
+
+    if "bot_messages" not in st.session_state:
+        st.session_state.bot_messages = [
+            {"role": "assistant",
+             "content": "Hi! Ask me about library appointments or student satisfaction surveys."}
+        ]
+
+    for msg in st.session_state.bot_messages:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+
+    if prompt := st.chat_input("Ask about library appointments or surveys..."):
+        st.session_state.bot_messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        with st.chat_message("assistant"):
+            with st.spinner("Looking at the data..."):
+                reply = answer(prompt)
+            st.markdown(reply)
+        st.session_state.bot_messages.append({"role": "assistant", "content": reply})
