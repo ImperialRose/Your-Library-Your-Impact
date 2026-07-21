@@ -50,6 +50,14 @@ This model, made by IBM, is approximately 2GB.
 
 ## Local Deployment
 
+Optionally, create a virtual Python environment. This ensures that you're always using Python packages and versions specific to this project. Creating a virtual Python environment is recommended if you are working on multiple Python projects, but is unnecessary if you are only working with the YLYI project.
+
+To optionally create a virtual Python environment:
+
+```
+python3 -m venv dashboard/.venv && source dashboard/.venv/bin/activate
+```
+
 To run the **dashboard** locally:
 
 ```
@@ -57,6 +65,12 @@ python3 -m streamlit run dashboard/app.py
 ```
 
 The dashboard opens at `http://localhost:8501`.
+
+If you created a virtual Python environment, you can deactivate it when you are done working with the YLYI application:
+
+```
+deactivate
+```
 
 ## Team
 
