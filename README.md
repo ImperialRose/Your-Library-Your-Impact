@@ -14,13 +14,13 @@ The dashboard includes visualizations on the library's service and collection ac
 
 ## Insights Bot
 
-*The insights bot is still under development.*
+The insights bot supports natural language interpretation of visualizations and quantitative trends. In other words, it lets users ask plain-English questions about the PNWU Health Sciences Library.
 
-The insights bot lets users ask plain-English questions about the PNWU Health Sciences Library, including about questions about appointments, patron satisfaction, costs, and circulation.
-
-The bot supports natural language interpretation of visualizations and quantitative trends. It has access to all the data shown in the dashboard, as well as additional data from the same underlying reports. For example, it has access to qualitative data from various surveys administered by the library, and to additional library cost breakdowns.
+As of July 2026, users can ask questions about appointments and student satisfaction. Future work may allow users to ask questions on general patron satisfaction (including faculty and administration), costs, and circulation, as well as additional data from the underlying reports used to generate the dashboard.
 
 The bot uses a retrieval-augmented generation (RAG) -based large language model (LLM). This means the bot does not need to be retrained as new data is added, and can work well with specialized content. It is modeled after the [San Jose State University's KingbotGPT](https://github.com/sjsu-library/kingbotgpt) project.
+
+Read [Architecture](architecture.md) for additional information on the construction of the insights bot.
 
 ## Prerequisites
 
