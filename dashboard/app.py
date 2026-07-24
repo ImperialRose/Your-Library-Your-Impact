@@ -205,14 +205,20 @@ if page == "Home":
             else:
                 filtered_sat23 = render_satisfaction_filters(sat23_df, key_prefix="sat23")
                 plot_satisfaction_means(filtered_sat23, 2023)
-                st.caption(f"{len(filtered_sat23)} respondents · 57.99% response rate")
+                if not(filtered_sat23.empty):
+                    # response rate should be just for the selected program(s)
+                    response_rate = round((len(filtered_sat23) / sum(filtered_sat23["Enrollments"].unique())) * 100)
+                    st.caption(f"{len(filtered_sat23)} respondents · {response_rate}% response rate")
         with survey_tab2:
             if sat25_df.empty:
                 st.warning("2025 data not found.")
             else:
                 filtered_sat25 = render_satisfaction_filters(sat25_df, key_prefix="sat25")
                 plot_satisfaction_means(filtered_sat25, 2025)
-                st.caption(f"{len(filtered_sat25)} respondents · 62.89% response rate")
+                if not(filtered_sat25.empty):
+                    # response rate should be just for the selected program(s)
+                    response_rate = round((len(filtered_sat25) / sum(filtered_sat25["Enrollments"].unique())) * 100)
+                    st.caption(f"{len(filtered_sat25)} respondents · {response_rate}% response rate")
         with survey_tab3:
             st.info("2023 and 2025 used different question sets so overlap is limited.")
             plot_satisfaction_comparison(sat_both_df)
