@@ -155,7 +155,7 @@ if page == "Home":
             st.metric("Total Lost Items", circ_df["Lost"].sum())
         with col_cir5:
             st.metric("Total Found Items", circ_df["Found"].sum())
-        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Checkouts", "Checkins", "Renews", "Hold", "Lost Items", "Found Items"])
+        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Checkouts", "Checkins", "Renewals", "Holds", "Lost Items", "Found Items"])
 
         if circ_df.empty:
             st.error("No circulation data found.")
