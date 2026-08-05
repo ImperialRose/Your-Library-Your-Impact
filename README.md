@@ -1,5 +1,8 @@
 # Your Library, Your Impact: Dashboard and Insights Bot
 
+[!IMPORTANT]
+The current version of this project is now at https://github.com/Pacific-Northwest-University/Your-Library-Your-Impact. We recommend developing against that repository instead of this one.
+
 This project is a data analytics dashboard and AI insights bot.
 
 The project was designed and built for the Pacific Northwest University (PNWU) Health Sciences Library by E.R.A.I. Informatics as a University of Washington Master of Science in Information Management (MSIM) capstone project, 2025-2026. It was designed to be adapted by other PNWU departments or other small academic libraries. <!-- Read the [LICENSE.md](license.md) file for additional information on adapting this work. -->
