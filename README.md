@@ -1,7 +1,7 @@
 # Your Library, Your Impact: Dashboard and Insights Bot
 
-[!IMPORTANT]
-The current version of this project is now at https://github.com/Pacific-Northwest-University/Your-Library-Your-Impact. We recommend developing against that repository instead of this one.
+> [!IMPORTANT]
+> The current version of this project is now at https://github.com/Pacific-Northwest-University/Your-Library-Your-Impact. We recommend developing against that repository instead of this one.
 
 This project is a data analytics dashboard and AI insights bot.
 
